@@ -1,6 +1,10 @@
 import { ItemView, WorkspaceLeaf } from 'obsidian';
+import { createApp } from 'vue';
+import Search from './Search.vue';
 
-export const VIEW_TYPE_EXAMPLE = 'example-view';
+
+
+export const VIEW_TYPE= 'example-view';
 
 export class ExampleView extends ItemView {
   constructor(leaf: WorkspaceLeaf) {
@@ -8,7 +12,7 @@ export class ExampleView extends ItemView {
   }
 
   getViewType() {
-    return VIEW_TYPE_EXAMPLE;
+    return VIEW_TYPE;
   }
 
   getDisplayText() {
@@ -44,6 +48,9 @@ export class ExampleView extends ItemView {
 		this.playAudio(query_withou_blank);
 		this.showPic(query_withou_blank);
 	});
+	// Create a Vue app and mount it to the container
+	const app = createApp(Search);
+	app.mount(container);
 	
   }
   async onClose() {
@@ -105,3 +112,4 @@ export class ExampleView extends ItemView {
   }
   
 }
+

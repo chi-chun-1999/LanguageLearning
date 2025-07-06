@@ -1,5 +1,5 @@
 import { Plugin, WorkspaceLeaf, Notice, Menu } from 'obsidian';
-import { ExampleView, VIEW_TYPE_EXAMPLE } from './view';
+import { ExampleView, VIEW_TYPE_EXAMPLE } from './view/SearchView';
 
 export default class ExamplePlugin extends Plugin {
   async onload() {
@@ -9,10 +9,9 @@ export default class ExamplePlugin extends Plugin {
     );
 
     this.addRibbonIcon('dice', 'Activate view', () => {
-      this.activateView();
+      // this.activateView();
 
     });
-
 
   }
 
